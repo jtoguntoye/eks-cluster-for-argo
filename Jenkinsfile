@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    def app
 
     stages{
         stage('view code source'){
@@ -11,7 +12,10 @@ pipeline{
         }
         stage('build image') {
             steps{
-                docker.build(joeltosin/eksapp)
+                script{
+                  app = docker.build(joeltosin/eksapp)
+                }
+                
             }
         }
 
