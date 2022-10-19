@@ -9,10 +9,11 @@ pipeline{
                 
             }
         }
-        // stage('build image') {
-        //     steps{
-        //         docker.build(joeltosin/eksapp)
-        //     }
-        // }
+        stage('build image') {
+            steps{
+                docker.build(joeltosin/eksapp)
+            }
+        }
+
     }
 }
