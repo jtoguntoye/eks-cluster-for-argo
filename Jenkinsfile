@@ -12,8 +12,8 @@ pipeline{
         stage('build image') {
             steps{
                 script{
-                  sh 'ls' 
-                //   def app = docker.build("joeltosin/eksapp")
+                   
+                   def app = docker.build("joeltosin/eksapp")
                 }
                 
             }
