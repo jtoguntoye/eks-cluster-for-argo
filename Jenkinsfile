@@ -20,9 +20,13 @@ pipeline{
         }
 
         stage('push image to Docker hub') {
+            
             steps{
-                    docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUBCREDENTIALS')
+                script{
+                    docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUBCREDENTIALS'){
                     app.push("${env.BUILD_NUMBER}")
+                    }
+                }
             }
         }
 
