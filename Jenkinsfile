@@ -2,10 +2,11 @@ pipeline{
     agent any
 
     stages{
-        stage('Checkout source'){
+        stage('view code source'){
             steps{
                 sh 'echo hello world'
-                chckout scm
+                sh "cat ./Dockerfile"
+                
             }
         }
         // stage('build image') {
